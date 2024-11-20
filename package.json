@@ -1,5 +1,5 @@
 {
-  "name": "wangEditor-plugin-upload-pdf",
+  "name": "wangeditor-plugin-upload-pdf",
   "version": "0.0.5",
   "private": false,
   "description": "wangEditor 导入PDF",
