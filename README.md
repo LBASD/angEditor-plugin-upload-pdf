@@ -1,17 +1,17 @@
-# wangEditor 上传附件 插件
+# wangEditor 上传并导入pdf 插件
 
-[English Documentation](./README-en.md)
-
+<!-- [English Documentation](./README-en.md) -->
+<!-- 
 ## 介绍
 
 [wangEditor](https://www.wangeditor.com/) 上传附件 插件。
 
-![](./_img/demo.png)
+![](./_img/demo.png) -->
 
 ## 安装
 
 ```shell
-yarn add @wangeditor-next/plugin-upload-attachment
+yarn add wang-editor-plugin-upload-pdf
 ```
 
 ## 使用
@@ -22,10 +22,10 @@ yarn add @wangeditor-next/plugin-upload-attachment
 
 ```js
 import { Boot } from '@wangeditor-next/editor'
-import attachmentModule from '@wangeditor-next/plugin-upload-attachment'
+import pdfModule from 'wang-editor-plugin-upload-pdf'
 
 // 注册。要在创建编辑器之前注册，且只能注册一次，不可重复注册。
-Boot.registerModule(attachmentModule)
+Boot.registerModule(pdfModule)
 ```
 
 ### 配置
@@ -38,14 +38,14 @@ import { IEditorConfig } from '@wangeditor-next/editor'
 const editorConfig: Partial<IEditorConfig> = {
 
   // 在编辑器中，点击选中“附件”节点时，要弹出的菜单
-  hoverbarKeys: {
-    attachment: {
-      menuKeys: ['downloadAttachment'], // “下载附件”菜单
-    },
-  },
+  // hoverbarKeys: {
+  //   attachment: {
+  //     menuKeys: ['downloadAttachment'], // “下载附件”菜单
+  //   },
+  // },
   MENU_CONF: {
     // “上传附件”菜单的配置
-    uploadAttachment: {
+    uploadPDF: {
       server: '/api/upload', // 服务端地址
       timeout: 5 * 1000, // 5s
 
@@ -108,7 +108,7 @@ const editorConfig: Partial<IEditorConfig> = {
       // },
 
       // 插入到编辑器后的回调
-      onInsertedAttachment(elem: AttachmentElement) {
+      onInsertedPDF(elem: AttachmentElement) {
         console.log('inserted attachment', elem)
       },
     },
@@ -127,7 +127,7 @@ const toolbarConfig: Partial<IToolbarConfig> = {
   // 插入哪些菜单
   insertKeys: {
     index: 0, // 自定义插入的位置
-    keys: ['uploadAttachment'], // “上传附件”菜单
+    keys: ['uploadPDF'], // “上传附件”菜单
   },
 
   // 其他...
@@ -163,7 +163,7 @@ const toolbarConfig: Partial<IToolbarConfig> = {
 附件节点获取的 HTML 格式如下，可以直接显示。
 
 ```html
-<a data-w-e-type="attachment" data-w-e-is-void data-w-e-is-inline href="https://xxx.com/aaa/bbb/xxx.zip" download="xxx.zip">xxx.zip</a>
+<iframe src="${src}" shortcode="${shortcode}" style="border:1px solid #DDDDDD;width:100%;height:500px"></iframe>
 ```
 
 ## 其他
