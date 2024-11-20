@@ -2,8 +2,8 @@
  * @Author: libo
  * @Date: 2024-11-20 11:08:09
  * @LastEditors: libo
- * @LastEditTime: 2024-11-20 11:46:05
- * @FilePath: \wangEditor-plugin-upload-attachment-main\src\module\menu\UploadPDF.ts
+ * @LastEditTime: 2024-11-20 15:35:12
+ * @FilePath: \wangEditor-plugin-upload-pdf-main\src\module\menu\UploadPDF.ts
  * @Description:
  */
 /**
@@ -66,13 +66,13 @@ class UploadPDFMenu implements IButtonMenu {
     if (selection == null) return true
     if (SlateRange.isExpanded(selection)) return true // 选区非折叠，禁用
 
-    const selectedElems = DomEditor.getSelectedElems(editor)
+    // const selectedElems = DomEditor.getSelectedElems(editor)
 
-    const hasVoidElem = selectedElems.some(elem => editor.isVoid(elem))
-    if (hasVoidElem) return true // 选中了 void 元素，禁用
+    // const hasVoidElem = selectedElems.some(elem => editor.isVoid(elem))
+    // if (hasVoidElem) return true // 选中了 void 元素，禁用
 
-    const hasPreElem = selectedElems.some(elem => DomEditor.getNodeType(elem) === 'pre')
-    if (hasPreElem) return true // 选中了 pre 原则，禁用
+    // const hasPreElem = selectedElems.some(elem => DomEditor.getNodeType(elem) === 'pre')
+    // if (hasPreElem) return true // 选中了 pre 原则，禁用
 
     return false
   }

@@ -25,7 +25,7 @@ describe('parse elem html', () => {
 
     const attachment = parseHtmlConf.parseElemHtml(elem, [], editor) as PDFElement
     expect(attachment.type).toBe('importPdf')
-    expect(attachment.src).toBe('src')
-    expect(attachment.shortcode).toBe('shortcode')
+    expect(attachment.src).toBe('aaa')
+    expect(attachment.shortcode).toBe('bbb')
   })
 })
