@@ -1,5 +1,5 @@
 {
-  "name": "@wangeditor/plugin-upload-pdf",
+  "name": "wangeditor-plugin-upload-pdf",
   "version": "0.0.6",
   "private": false,
   "description": "wangEditor 导入PDF",
@@ -13,7 +13,7 @@
     "wangeditor",
     "wangeditor-next"
   ],
-  "author": "github.com/wangfupeng1988",
+  "author": "github.com/LBASD",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LBASD/wangEditor-plugin-upload-pdf/issues"
@@ -103,5 +103,9 @@
   },
   "dependencies": {
     "dom7": "^4.0.4"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
   }
 }
